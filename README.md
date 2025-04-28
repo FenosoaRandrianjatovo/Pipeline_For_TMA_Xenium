@@ -1,2 +1,2 @@
-# Pipeline_For_TMA_Xenium
+# Pipeline For TMA Xenium
 This TMA is for Xenium 
