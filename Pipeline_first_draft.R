@@ -9,14 +9,16 @@ library(patchwork)
 
 plan("multisession", workers = 25)
 
-setwd("/lustre04/scratch/fenosoa/Maya_Project/pipeline_Region/quick_exper")
+setwd("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/")
 
-path <- "/home/fenosoa/scratch/Maya_Project/pipeline_Region/out1/UMAP_xenium1.obj.RData" # "/home/fenosoa/projects/def-salehlab-ab/fenosoa/UMAP_Xenium_ROI_1_2_3/UMAP_xenium1.obj.RData"
-temp_env <- new.env()
-print("xenium.obj :   Loading begin")
-load(path, envir = temp_env)
+path <- "/home/fenosoa/projects/def-salehlab-ab/TMA_Xenium/output-XETG00325__0051618__TMA__20250124__223259" 
 
-xenium.obj <- temp_env$xenium1.obj
+
+# Load the Xenium data
+xenium.obj <- LoadXenium(path, fov = "fov")
+
+# remove cells with 0 counts
+xenium.obj <- subset(xenium.obj, subset = nCount_Xenium > 0)
 
 
 if (!dir.exists("img")) {
