@@ -8,6 +8,7 @@ library(RColorBrewer)
 library(patchwork)
 
 plan("multisession", workers = 25)
+options(future.globals.maxSize = 25 * 1024^3) 
 
 setwd("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/")
 
@@ -19,6 +20,17 @@ xenium.obj <- LoadXenium(path, fov = "fov")
 
 # remove cells with 0 counts
 xenium.obj <- subset(xenium.obj, subset = nCount_Xenium > 0)
+
+
+xenium.obj <- SCTransform(xenium.obj, assay = "Xenium")
+#> dim(xenium.obj@assays$SCT@counts)
+#[1]   248 36553
+slotNames(xenium.obj)
+
+xenium.obj <- RunPCA(xenium.obj, npcs = 30, features = rownames(xenium.obj))
+xenium.obj <- RunUMAP(xenium.obj, dims = 1:30)
+xenium.obj <- FindNeighbors(xenium.obj, reduction = "pca", dims = 1:30)
+xenium.obj <- FindClusters(xenium.obj, resolution = 0.3)
 
 
 if (!dir.exists("img")) {
