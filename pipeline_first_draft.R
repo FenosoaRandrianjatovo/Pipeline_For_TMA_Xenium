@@ -21,7 +21,14 @@ xenium.obj <- LoadXenium(path, fov = "fov")
 # remove cells with 0 counts
 xenium.obj <- subset(xenium.obj, subset = nCount_Xenium > 0)
 
+print("==================================================================================")
+genes <- rownames(xenium.obj)
 
+print("Save Genes as a text file")
+# Save as a text file
+write.table(genes, file = "genes_TMA.txt", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
+print("==================================================================================")
 xenium.obj <- SCTransform(xenium.obj, assay = "Xenium")
 #> dim(xenium.obj@assays$SCT@counts)
 #[1]   248 36553
@@ -34,10 +41,12 @@ xenium.obj <- FindClusters(xenium.obj, resolution = 0.3)
 
 
 
-
+print("==================================================================================")
 print("Save the xenium.obj with UMAP and SCT slot to disk under the name xenium.obj....And we can load it back")
 save(xenium.obj, file = "/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/data_object/UMAP_xenium.obj.RData")
 
+print("Saving is DONE")
+print("==================================================================================")
 
 
 if (!dir.exists("img")) {
