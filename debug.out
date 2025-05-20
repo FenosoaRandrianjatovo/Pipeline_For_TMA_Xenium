@@ -1,0 +1,22 @@
+xenium.obj <- LoadXenium(path, fov = "fov")
+
+# remove cells with 0 counts
+xenium.obj <- subset(xenium.obj, subset = nCount_Xenium > 0)
+Genome matrix has multiple modalities, returning a list of matrices for this genome
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+Warning messages:
+1: Not validating FOV objects 
+2: Not validating Centroids objects 
+3: Not validating Centroids objects 
+4: Not validating FOV objects 
+5: Not validating FOV objects 
+6: Not validating FOV objects 
+7: Not validating Seurat objects 
+

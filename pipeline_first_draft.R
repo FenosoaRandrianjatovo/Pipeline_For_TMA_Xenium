@@ -29,10 +29,12 @@ print("Save Genes as a text file")
 write.table(genes, file = "genes_TMA.txt", row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 print("==================================================================================")
+plot0 <- ImageDimPlot(xenium.obj, fov = "fov", molecules = c("RETREG1",   "RETREG3", "PIMREG", "FOXRED1"), nmols = 20000)
+ggsave("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/ImageDimPlot_TMA_RETREG1.png", plot = plot0, width = 20, height = 15, dpi = 300)
+print("==================================================================================")
 xenium.obj <- SCTransform(xenium.obj, assay = "Xenium")
 #> dim(xenium.obj@assays$SCT@counts)
 #[1]   248 36553
-slotNames(xenium.obj)
 
 xenium.obj <- RunPCA(xenium.obj, npcs = 30, features = rownames(xenium.obj))
 xenium.obj <- RunUMAP(xenium.obj, dims = 1:30)
@@ -80,6 +82,7 @@ print(length(groups))
 n <- length(groups)
 # We have 12 Cluster
 
+print("==================================================================================")
 
 
 if (!dir.exists("ident")) {
@@ -205,8 +208,6 @@ for (ident in 0:(n-1)) {
 # Once zoomed-in, we can set DefaultBoundary() to show cell segmentations. 
 # You can also ‘simplify’ the cell segmentations, 
 # reducing the number of edges in each polygon to speed up plotting.
-
-
 
 
 
