@@ -33,6 +33,13 @@ xenium.obj <- FindNeighbors(xenium.obj, reduction = "pca", dims = 1:30)
 xenium.obj <- FindClusters(xenium.obj, resolution = 0.3)
 
 
+
+
+print("Save the xenium.obj with UMAP and SCT slot to disk under the name xenium.obj....And we can load it back")
+save(xenium.obj, file = "/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/data_object/UMAP_xenium.obj.RData")
+
+
+
 if (!dir.exists("img")) {
   dir.create("img")
 }
@@ -41,7 +48,7 @@ ggsave("img/UMAP_Plot.png", plot = plot4, width = 20, height = 15, dpi = 300)
 
 
 plot1 <- FeaturePlot(xenium.obj, features = c("TREM1", "CD163"))
-ggsave("img/FeaturePlot_of_MregTREM1__CD163_R1.png", plot = plot1, 
+ggsave("img/FeaturePlot_of_MregTREM1__CD163.png", plot = plot1, 
        width = 80, height = 50, dpi = 300, limitsize = FALSE)
 
 
@@ -325,22 +332,22 @@ ggsave("VlnPlot_Feature_Count/VlnPlot_nFeature_Xenium_nCount_Xenium_before_Clust
 
 
 # If needed, set it to the correct assay, for example:
-DefaultAssay(xenium.obj) <- "Xenium"  
+# DefaultAssay(xenium.obj) <- "Xenium"  
 
-genes_to_plot <- c("KHK", "CD4", "CYBA", "TMPRSS6")
+# genes_to_plot <- c("KHK", "CD4", "CYBA", "TMPRSS6")
 
-# Get the feature names from the default assay
-assay_features <- rownames(xenium.obj@assays[[DefaultAssay(xenium.obj)]])
+# # Get the feature names from the default assay
+# assay_features <- rownames(xenium.obj@assays[[DefaultAssay(xenium.obj)]])
 
-# Check which genes are present
-present_genes <- genes_to_plot[genes_to_plot %in% assay_features]
-missing_genes <- genes_to_plot[!genes_to_plot %in% assay_features]
+# # Check which genes are present
+# present_genes <- genes_to_plot[genes_to_plot %in% assay_features]
+# missing_genes <- genes_to_plot[!genes_to_plot %in% assay_features]
 
-print(paste("Present genes:", paste(present_genes, collapse = ", ")))
-print(paste("Missing genes:", paste(missing_genes, collapse = ", ")))
+# print(paste("Present genes:", paste(present_genes, collapse = ", ")))
+# print(paste("Missing genes:", paste(missing_genes, collapse = ", ")))
 
-xenium.obj_up <- UpdateSeuratObject(xenium.obj)
-plot2 <- Seurat::SpatialPlot(xenium.obj_up, features = "KHK", pt.size = 0.1)
-ggsave("SpatialPlot.png", plot = plot2, width = 20, height = 15, dpi = 300)
+# xenium.obj_up <- UpdateSeuratObject(xenium.obj)
+# plot2 <- Seurat::SpatialPlot(xenium.obj_up, features = "KHK", pt.size = 0.1)
+# ggsave("SpatialPlot.png", plot = plot2, width = 20, height = 15, dpi = 300)
 
-View(Seurat::SpatialPlot)
+# View(Seurat::SpatialPlot)
