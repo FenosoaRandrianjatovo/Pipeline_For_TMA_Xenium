@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=run_pipeline_TMA
+#SBATCH --job-name=run_TMA
 #SBATCH --account=def-amadou
-#SBATCH --mem=500G
+#SBATCH --mem=64G
 #SBATCH --time=0-20:00:00
 #SBATCH --cpus-per-task=30
 #SBATCH --mail-user=fenosoaammi@gmail.com
