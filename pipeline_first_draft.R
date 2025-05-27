@@ -8,7 +8,7 @@ library(RColorBrewer)
 library(patchwork)
 
 plan("multisession", workers = 25)
-options(future.globals.maxSize = 25 * 1024^3) 
+options(future.globals.maxSize = 500 * 1024^3) 
 
 setwd("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/")
 
@@ -32,6 +32,7 @@ print("=========================================================================
 plot0 <- ImageDimPlot(xenium.obj, fov = "fov", molecules = c("RETREG1",   "RETREG3", "PIMREG", "FOXRED1"), nmols = 20000)
 ggsave("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/ImageDimPlot_TMA_RETREG1.png", plot = plot0, width = 20, height = 15, dpi = 300)
 print("==================================================================================")
+print("SCTransform is running")
 xenium.obj <- SCTransform(xenium.obj, assay = "Xenium")
 #> dim(xenium.obj@assays$SCT@counts)
 #[1]   248 36553
@@ -41,11 +42,10 @@ xenium.obj <- RunUMAP(xenium.obj, dims = 1:30)
 xenium.obj <- FindNeighbors(xenium.obj, reduction = "pca", dims = 1:30)
 xenium.obj <- FindClusters(xenium.obj, resolution = 0.3)
 
-
-
+print("SCTransform, FindClusters and RunUMAP are done")
 print("==================================================================================")
 print("Save the xenium.obj with UMAP and SCT slot to disk under the name xenium.obj....And we can load it back")
-save(xenium.obj, file = "/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/data_object/UMAP_xenium.obj.RData")
+save(xenium.obj, file = "/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/data_object/UMAP_v2_xenium.obj.RData")
 
 print("Saving is DONE")
 print("==================================================================================")
