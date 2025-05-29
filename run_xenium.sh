@@ -3,7 +3,7 @@
 #SBATCH --account=def-amadou
 #SBATCH --mem=528G
 #SBATCH --time=0-20:00:00
-#SBATCH --cpus-per-task=15
+#SBATCH --cpus-per-task=30
 #SBATCH --mail-user=fenosoaammi@gmail.com
 #SBATCH --mail-type=END,FAIL
 #SBATCH --output=/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/Pipeline_For_TMA_Xenium/logs/run_pipeline_TMA_%j.out
