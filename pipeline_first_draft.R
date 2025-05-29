@@ -8,19 +8,24 @@ library(RColorBrewer)
 library(patchwork)
 
 plan("multisession", workers = 30)
-options(future.globals.maxSize = 500 * 1024^3) 
+options(future.globals.maxSize = 700 * 1024^3) 
+
+# remotes::install_version(package = 'Seurat', version = package_version('5.2.0'))
 
 setwd("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/")
 
+print("==================================================================================")
 print(sessionInfo())
+print("==================================================================================")
+
 
 path <- "/home/fenosoa/projects/def-salehlab-ab/TMA_Xenium/output-XETG00325__0051618__TMA__20250124__223259" 
 
 
-# Load the Xenium data
+print("# Load the Xenium data")
 xenium.obj <- LoadXenium(path, fov = "fov")
 
-# remove cells with 0 counts
+print("# remove cells with 0 counts")
 xenium.obj <- subset(xenium.obj, subset = nCount_Xenium > 0)
 
 print("==================================================================================")
@@ -32,7 +37,7 @@ write.table(genes, file = "genes_TMA.txt", row.names = FALSE, col.names = FALSE,
 
 print("==================================================================================")
 plot0 <- ImageDimPlot(xenium.obj, fov = "fov", molecules = c("RETREG1",   "RETREG3", "PIMREG", "FOXRED1"), nmols = 20000)
-ggsave("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/ImageDimPlot_TMA_RETREG1_FOXRED1.png", plot = plot0, width = 20, height = 15, dpi = 300)
+ggsave("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/ImageDimPlot_TMA_RETREG1_FOXRED1_v1.png", plot = plot0, width = 20, height = 15, dpi = 300)
 print("==================================================================================")
 
 print("SCTransform is running")
