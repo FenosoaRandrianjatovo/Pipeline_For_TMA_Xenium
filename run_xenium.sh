@@ -5,7 +5,7 @@
 #SBATCH --time=0-20:00:00
 #SBATCH --cpus-per-task=40
 #SBATCH --mail-user=fenosoaammi@gmail.com
-#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-type=START,END,FAIL
 #SBATCH --output=/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/Pipeline_For_TMA_Xenium/logs/run_pipeline_TMA_%j.out
 #SBATCH --error=/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/Pipeline_For_TMA_Xenium/logs/run_pipeline_TMA_%j.err
 
