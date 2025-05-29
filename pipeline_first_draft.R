@@ -7,7 +7,7 @@ library(patchwork)
 library(RColorBrewer)
 library(patchwork)
 
-plan("multisession", workers = 25)
+plan("multisession", workers = 10)
 options(future.globals.maxSize = 500 * 1024^3) 
 
 setwd("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/")
