@@ -12,6 +12,8 @@ options(future.globals.maxSize = 500 * 1024^3)
 
 setwd("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/")
 
+print(sessionInfo())
+
 path <- "/home/fenosoa/projects/def-salehlab-ab/TMA_Xenium/output-XETG00325__0051618__TMA__20250124__223259" 
 
 
@@ -32,14 +34,23 @@ print("=========================================================================
 plot0 <- ImageDimPlot(xenium.obj, fov = "fov", molecules = c("RETREG1",   "RETREG3", "PIMREG", "FOXRED1"), nmols = 20000)
 ggsave("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/ImageDimPlot_TMA_RETREG1_FOXRED1.png", plot = plot0, width = 20, height = 15, dpi = 300)
 print("==================================================================================")
+
 print("SCTransform is running")
 xenium.obj <- SCTransform(xenium.obj, assay = "Xenium")
 #> dim(xenium.obj@assays$SCT@counts)
 #[1]   248 36553
 
+print("RunPCA is running")
 xenium.obj <- RunPCA(xenium.obj, npcs = 30, features = rownames(xenium.obj))
+
+print("RunUMAP is running")
 xenium.obj <- RunUMAP(xenium.obj, dims = 1:30)
+
+print("FindNeighbors is running")
 xenium.obj <- FindNeighbors(xenium.obj, reduction = "pca", dims = 1:30)
+
+
+print("FindClusters is running")
 xenium.obj <- FindClusters(xenium.obj, resolution = 0.3)
 
 print("SCTransform, FindClusters and RunUMAP are done")
