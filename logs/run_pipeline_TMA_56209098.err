@@ -1,0 +1,380 @@
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘arrow’
+
+The following object is masked from ‘package:utils’:
+
+    timestamp
+
+
+Attaching package: ‘glmGamPoi’
+
+The following object is masked from ‘package:ggplot2’:
+
+    vars
+
+Running SCTransform on assay: Xenium
+Running SCTransform on layer: counts
+vst.flavor='v2' set. Using model with fixed slope and excluding poisson genes.
+Variance stabilizing transformation of count matrix of size 5001 by 299125
+Model formula is y ~ log_umi
+Get Negative Binomial regression parameters per gene
+Using 2000 genes, 5000 cells
+Found 329 outliers - those will be ignored in fitting/regularization step
+
+Second step: Get residuals using fitted parameters for 5001 genes
+Computing corrected count matrix for 5001 genes
+Calculating gene attributes
+Wall clock passed: Time difference of 19.73925 mins
+Determine variable features
+Centering data matrix
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+Getting residuals for block 1(of 60) for counts dataset
+Getting residuals for block 2(of 60) for counts dataset
+Getting residuals for block 3(of 60) for counts dataset
+Getting residuals for block 4(of 60) for counts dataset
+Getting residuals for block 5(of 60) for counts dataset
+Getting residuals for block 6(of 60) for counts dataset
+Getting residuals for block 7(of 60) for counts dataset
+Getting residuals for block 8(of 60) for counts dataset
+Getting residuals for block 9(of 60) for counts dataset
+Getting residuals for block 10(of 60) for counts dataset
+Getting residuals for block 11(of 60) for counts dataset
+Getting residuals for block 12(of 60) for counts dataset
+Getting residuals for block 13(of 60) for counts dataset
+Getting residuals for block 14(of 60) for counts dataset
+Getting residuals for block 15(of 60) for counts dataset
+Getting residuals for block 16(of 60) for counts dataset
+Getting residuals for block 17(of 60) for counts dataset
+Getting residuals for block 18(of 60) for counts dataset
+Getting residuals for block 19(of 60) for counts dataset
+Getting residuals for block 20(of 60) for counts dataset
+Getting residuals for block 21(of 60) for counts dataset
+Getting residuals for block 22(of 60) for counts dataset
+Getting residuals for block 23(of 60) for counts dataset
+Getting residuals for block 24(of 60) for counts dataset
+Getting residuals for block 25(of 60) for counts dataset
+Getting residuals for block 26(of 60) for counts dataset
+Getting residuals for block 27(of 60) for counts dataset
+Getting residuals for block 28(of 60) for counts dataset
+Getting residuals for block 29(of 60) for counts dataset
+Getting residuals for block 30(of 60) for counts dataset
+Getting residuals for block 31(of 60) for counts dataset
+Getting residuals for block 32(of 60) for counts dataset
+Getting residuals for block 33(of 60) for counts dataset
+Getting residuals for block 34(of 60) for counts dataset
+Getting residuals for block 35(of 60) for counts dataset
+Getting residuals for block 36(of 60) for counts dataset
+Getting residuals for block 37(of 60) for counts dataset
+Getting residuals for block 38(of 60) for counts dataset
+Getting residuals for block 39(of 60) for counts dataset
+Getting residuals for block 40(of 60) for counts dataset
+Getting residuals for block 41(of 60) for counts dataset
+Getting residuals for block 42(of 60) for counts dataset
+Getting residuals for block 43(of 60) for counts dataset
+Getting residuals for block 44(of 60) for counts dataset
+Getting residuals for block 45(of 60) for counts dataset
+Getting residuals for block 46(of 60) for counts dataset
+Getting residuals for block 47(of 60) for counts dataset
+Getting residuals for block 48(of 60) for counts dataset
+Getting residuals for block 49(of 60) for counts dataset
+Getting residuals for block 50(of 60) for counts dataset
+Getting residuals for block 51(of 60) for counts dataset
+Getting residuals for block 52(of 60) for counts dataset
+Getting residuals for block 53(of 60) for counts dataset
+Getting residuals for block 54(of 60) for counts dataset
+Getting residuals for block 55(of 60) for counts dataset
+Getting residuals for block 56(of 60) for counts dataset
+Getting residuals for block 57(of 60) for counts dataset
+Getting residuals for block 58(of 60) for counts dataset
+Getting residuals for block 59(of 60) for counts dataset
+Getting residuals for block 60(of 60) for counts dataset
+Centering data matrix
+Finished calculating residuals for counts
+Set default assay to SCT
+There were 12 warnings (use warnings() to see them)
+PC_ 1 
+Positive:  H19, DLK1, IGF2, COL4A1, UBD, CYBA, STAT1, COL4A2, WARS, FRAS1 
+	   GBP5, PLVAP, CXCR4, HSPG2, APP, ENG, TAP1, THY1, STAB1, ADAMTS1 
+	   CLDN5, SHANK3, TGFBR2, FREM1, MCAM, BCAM, RNF43, COL5A1, FSCN1, NOTCH4 
+Negative:  BHMT, SERPINA3, IGFBP2, F12, CPS1, SERPINC1, PLG, EPHX1, SLC22A1, MAT1A 
+	   ITIH1, CFB, DHCR24, TFR2, EEF1A2, SORD, CES1, CD14, CLPTM1L, APOB 
+	   SAA4, ERRFI1, PCK1, REEP6, POR, HPD, HSD17B6, F2, ABCB4, CYP2D6 
+PC_ 2 
+Positive:  DLK1, APP, FRAS1, COL4A1, FREM1, ST14, ANPEP, NPNT, BCAM, RNF43 
+	   ITGA2, TGFBR2, HMGA2, TSPAN8, NT5E, CCN3, YAP1, LAMP2, DKK1, SOD3 
+	   PLCG1, COL4A5, FSCN1, LGR5, TBCK, FGFR4, ROR2, IGF2BP2, FNDC3B, ADAMTS1 
+Negative:  H19, UBD, STAT1, GBP5, WARS, C4B, TAP1, C4A, IRF1, CXCL10 
+	   GBP1, HABP2, PEG10, NTS, TAP2, CIITA, CXCL9, GLDN, SREBF1, CFHR1 
+	   FASN, CPS1, APOL3, ACSL4, FURIN, MX1, APOL6, GOT1, LRG1, APOL1 
+PC_ 3 
+Positive:  DLK1, H19, IGF2, FRAS1, ANPEP, FREM1, RNF43, FGFR4, ST14, APP 
+	   DKK1, NT5E, IGF2BP2, ITGA2, TSPAN8, HMGA2, LAMP2, ACSL4, UBD, CKAP4 
+	   BCAM, NPNT, LGR5, NPM3, CEACAM1, ERBB3, COL4A5, CCN3, YAP1, AHSG 
+Negative:  COL4A1, PLVAP, ADAMTS1, ENG, COL4A2, HSPG2, NR4A1, SHANK3, NOTCH4, STAB1 
+	   MCAM, AEBP1, COL5A1, THY1, CLDN5, CD34, CXCR4, TCF4, PECAM1, TNXB 
+	   EGFL7, THBS2, NOTCH3, EPAS1, THBS1, PDGFRB, FLT4, CCL14, ADAMTS4, EMP1 
+PC_ 4 
+Positive:  MZB1, CXCR4, DERL3, CD79A, PIM2, CD4, SERPINA3, ITGB2, POU2AF1, CD3E 
+	   SIGLEC1, CYBA, CD5L, CD14, LGMN, CCL19, CD163, TENT5C, THEMIS2, ITGAX 
+	   ACAP1, AEBP1, ADGRE5, MMP9, CD44, IL10RA, PCK1, CIITA, SEMA4D, CSF1R 
+Negative:  H19, PLVAP, COL4A1, EEF1A2, NOTCH4, CLPTM1L, SHANK3, HSPG2, CLDN5, ENG 
+	   REEP6, MCAM, CD34, SLC22A1, CA12, EGFL7, ADAMTS1, COL4A2, SCGN, PODXL 
+	   ANO1, DLL4, NOS1AP, F12, FLT4, PEG10, TIE1, HSPA6, CDH5, DLK1 
+PC_ 5 
+Positive:  CLPTM1L, EEF1A2, HSPA6, MZB1, REEP6, SLC22A1, DERL3, CA12, SCGN, NOS1AP 
+	   ANO1, CXCR4, FOXP3, CD79A, FNDC5, F12, MAFB, PPIF, CCL25, PEG10 
+	   PIM2, POU2AF1, FGF21, CD3E, ANGPTL7, TERT, TM6SF2, SERPINC1, FADS2, ITGB2 
+Negative:  SERPINA3, LRG1, LBP, C9, MAT1A, C4A, HAMP, PLVAP, CFB, CFHR1 
+	   PCK1, CP, HABP2, SHANK3, GOT1, AOX1, CD14, IGFBP1, CYP2C9, PLG 
+	   NOTCH4, CFH, C4B, PZP, COL4A1, CYP1A2, DLK1, PC, C5, BCAM 
+Warning message:
+In PrepDR(object = object, features = features, verbose = verbose) :
+  The following 2001 features requested have not been scaled (running reduction without them): A2ML1, ABCA4, ABCC12, ABCC8, ABO, ABTB1, ACE2, ACOD1, ACPP, ACRBP, ACRV1, ACTBL2, ACTL7A, ACTN2, ADAM28, ADAM33, ADAMDEC1, ADAMTS19, ADCY2, ADCYAP1, ADCYAP1R1, ADGRA1, ADGRB1, ADGRB2, ADGRD2, ADGRE1, ADGRG5, ADGRL1, ADGRL4, ADIPOQ, ADORA1, ADORA2A, ADORA2B, ADORA3, ADRA1D, ADRA2A, ADRB1, ADRB3, ADTRP, AFF2, AFG1L, AGR3, AGRP, AGTR2, AHRR, AICDA, AIF1L, AIM2, AIRE, AJAP1, AKAP4, ALG6, ALK, ALOX12, ALOX15, ALPK1, ALX1, AMH, AMIGO1, AMIGO3, ANGPT1, ANK1, ANKK1, ANKRD30A, ANKRD6, ANXA3, ANXA8, AP1S3, AP3B2, AP3M2, APAF1, APC, APELA, APLF, APOBEC3B, APOBEC3D, APOBEC3F, APOBEC3G, AQP4, AQP5, ARC, ARG2, ARHGAP36, ARMC7, ARNTL, ARR3, ART1, ART3, ARX, ASCL1, ASCL2, ASIC1, ASPN, ATF3, ATG10, ATG5, ATL1, ATOH1, ATOH7, ATP10D, ATP6V1B1, ATXN7L2, AUNIP, AURKC, AVPR1B, AVPR2, BAALC, BAG2, BANK1, BARD1, BARHL2, BARX2, BATF3, BCAN, BCAR4, BCHE, BCL11A, BCL11B, BCL2, BCL2A1, BCL2L11, BCL7C, BDKRB1, BDKRB2, BDNF [... truncated]
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+13:01:50 UMAP embedding parameters a = 0.9922 b = 1.112
+13:01:50 Read 299125 rows and found 30 numeric columns
+13:01:50 Using Annoy for neighbor search, n_neighbors = 30
+13:01:50 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+13:02:39 Writing NN index file to temp file /tmp/RtmpIGAdxx/file8a6827ab2e07
+13:02:40 Searching Annoy index using 25 threads, search_k = 3000
+13:02:48 Annoy recall = 99.77%
+13:02:49 Commencing smooth kNN distance calibration using 25 threads with target n_neighbors = 30
+13:02:49 140 smooth knn distance failures
+13:02:58 Initializing from normalized Laplacian + noise (using RSpectra)
+13:03:51 Commencing optimization for 200 epochs, with 14250374 positive edges
+13:03:51 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+13:07:44 Optimization finished
+Computing nearest neighbor graph
+Computing SNN
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+1 singletons identified. 19 final clusters.
+Warning message:
+UNRELIABLE VALUE: One of the ‘future.apply’ iterations (‘future_lapply-1’) unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning message:
+The `slot` argument of `FetchData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>. 
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning message:
+The following requested variables were not found: FoxP3 
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning message:
+The following requested variables were not found: CD24 
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning message:
+`PackageCheck()` was deprecated in SeuratObject 5.0.0.
+ℹ Please use `rlang::check_installed()` instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>. 
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+Warning: No FOV associated with assay 'SCT', using global default FOV
+Error in `ggsave()`:
+! Dimensions exceed 50 inches (`height` and `width` are specified in
+  inches not pixels).
+ℹ If you're sure you want a plot that big, use `limitsize = FALSE`.
+Backtrace:
+    ▆
+ 1. └─ggplot2::ggsave(...)
+ 2.   └─ggplot2:::plot_dim(...)
+ 3.     └─cli::cli_abort(...)
+ 4.       └─rlang::abort(...)
+Execution halted
+Error in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0node -> unserialize
+Error in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0node -> unserialize
+ -> unserialize
+ -> unserialize
+Error in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0nodeError in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0node -> unserialize
+ -> unserialize
+ -> unserialize
+Error in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0node -> unserialize
+ -> unserialize
+ -> unserialize
+Execution halted
+ -> unserialize
+ -> unserialize
+ -> unserialize
+ -> unserialize
+ -> unserialize
+ -> unserialize
+ -> unserialize
+ -> unserialize
+ -> unserialize
+ -> unserialize
+Execution halted
+Execution halted
+Execution halted
+ -> unserialize
+ -> unserialize
+Execution halted
+Execution halted
+Execution halted
+ -> unserialize
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Execution halted
+Error in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0node -> unserialize
+Execution halted
+Error in unserialize(node$con) : error reading from connection
+Calls: workRSOCK ... doTryCatch -> recvData -> recvData.SOCK0node -> unserialize
+Execution halted

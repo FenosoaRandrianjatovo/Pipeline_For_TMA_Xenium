@@ -1,0 +1,31 @@
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘arrow’
+
+The following object is masked from ‘package:utils’:
+
+    timestamp
+
+
+Attaching package: ‘glmGamPoi’
+
+The following object is masked from ‘package:ggplot2’:
+
+    vars
+
+Running SCTransform on assay: Xenium
+Running SCTransform on layer: counts
+vst.flavor='v2' set. Using model with fixed slope and excluding poisson genes.
+Variance stabilizing transformation of count matrix of size 5001 by 299125
+Model formula is y ~ log_umi
+Get Negative Binomial regression parameters per gene
+Using 2000 genes, 5000 cells
+slurmstepd: error: *** JOB 56207887 ON bl12449 CANCELLED AT 2025-05-30T12:36:13 ***
