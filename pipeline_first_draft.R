@@ -45,16 +45,16 @@ xenium.obj <- temp_env$xenium.obj
 
 print("==================================================================================")
 
-genes <- rownames(xenium.obj)
+# genes <- rownames(xenium.obj)
 
-print("Save Genes as a text file")
-# Save as a text file
-write.table(genes, file = "genes_TMA.txt", row.names = FALSE, col.names = FALSE, quote = FALSE)
+# print("Save Genes as a text file")
+# # Save as a text file
+# write.table(genes, file = "genes_TMA.txt", row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 
-print("==================================================================================")
-plot0 <- ImageDimPlot(xenium.obj, fov = "fov", molecules = c("RETREG1",   "RETREG3", "PIMREG", "FOXRED1"), nmols = 20000)
-ggsave("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/ImageDimPlot_TMA_RETREG1_FOXRED1_v1.png", plot = plot0, width = 20, height = 15, dpi = 300)
+# print("==================================================================================")
+# plot0 <- ImageDimPlot(xenium.obj, fov = "fov", molecules = c("RETREG1",   "RETREG3", "PIMREG", "FOXRED1"), nmols = 20000)
+# ggsave("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/ImageDimPlot_TMA_RETREG1_FOXRED1_v1.png", plot = plot0, width = 20, height = 15, dpi = 300)
 print("==================================================================================")
 
 print("SCTransform is running")
