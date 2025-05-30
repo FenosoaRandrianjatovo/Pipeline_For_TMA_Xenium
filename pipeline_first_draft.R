@@ -8,7 +8,7 @@ library(RColorBrewer)
 library(patchwork)
 
 plan("multisession", workers = 25)
-options(future.globals.maxSize = 700 * 1024^3) 
+# options(future.globals.maxSize = 700 * 1024^3) 
 
 # remotes::install_version(package = 'Seurat', version = package_version('5.2.0'))
 
@@ -46,6 +46,7 @@ print("=========================================================================
 
 print("SCTransform is running")
 # xenium.obj <- SCTransform(xenium.obj, assay = "Xenium")
+options(future.globals.maxSize = 480 * 1024^3)  # Set the limit to 400 GB
 
 xenium.obj <- SCTransform(
   xenium.obj,
