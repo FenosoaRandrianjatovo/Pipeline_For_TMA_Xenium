@@ -64,7 +64,7 @@ options(future.globals.maxSize = 480 * 1024^3)  # Set the limit to 400 GB
 xenium.obj <- SCTransform(
   xenium.obj,
   assay = "Xenium",
-  layer = "counts"      # use `layer` instead of deprecated `slot`
+  layer = "counts"      
 )
 
 
