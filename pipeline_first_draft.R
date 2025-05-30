@@ -7,7 +7,10 @@ library(patchwork)
 library(RColorBrewer)
 library(patchwork)
 
-plan("multisession", workers = 25)
+# plan("multisession", workers = 25)
+
+cl <- parallelly::makeClusterPSOCK(25, outfile="")
+plan(cluster, workers = cl)
 # options(future.globals.maxSize = 700 * 1024^3) 
 
 # remotes::install_version(package = 'Seurat', version = package_version('5.2.0'))
