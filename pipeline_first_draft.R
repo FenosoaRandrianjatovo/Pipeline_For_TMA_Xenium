@@ -27,7 +27,10 @@ xenium.obj <- LoadXenium(path, fov = "fov")
 
 print("# remove cells with 0 counts")
 xenium.obj <- subset(xenium.obj, subset = nCount_Xenium > 0)
-
+print("==================================================================================")
+print("Save xenium.obj as a R Data file")
+save(xenium.obj, file = "/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/data_object/positive_count_xenium.obj.RData")
+print("Save xenium.obj as a R Data file is done")
 print("==================================================================================")
 genes <- rownames(xenium.obj)
 
@@ -49,6 +52,7 @@ xenium.obj <- SCTransform(
   assay = "Xenium",
   layer = "counts"      # use `layer` instead of deprecated `slot`
 )
+
 
 #> dim(xenium.obj@assays$SCT@counts)
 #[1]   248 36553
