@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=run_TMA
 #SBATCH --account=def-amadou
-#SBATCH --mem=740G
+#SBATCH --mem=751G
 #SBATCH --time=0-20:00:00
 #SBATCH --cpus-per-task=40
 #SBATCH --mail-user=fenosoaammi@gmail.com
