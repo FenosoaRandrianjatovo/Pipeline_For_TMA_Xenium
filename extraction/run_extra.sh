@@ -20,6 +20,6 @@ module load  gcc/12.3  r/4.4.0
 
 echo "Rscript  is starting..."
 
-Rscript count_extraction.R
+Rscript extract_all.R
 
 echo "Job finished."
