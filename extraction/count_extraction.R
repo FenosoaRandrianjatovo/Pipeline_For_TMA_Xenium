@@ -44,7 +44,7 @@ counts_df <- as.data.frame(t(as.matrix(counts_sub)))
 print("# 5. Add the corresponding cluster labels")
 counts_df$cluster <- xenium.obj@meta.data[selected_cells, "seurat_clusters"]
 
-print("# 6. Write out")
+print("# 6. Write out to csv file")
 write.csv(counts_df,
           file = "TMA_counts_with_clusters_SCT_data_50000cells.csv",
           row.names = TRUE)
