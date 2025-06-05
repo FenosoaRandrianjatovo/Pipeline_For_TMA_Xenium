@@ -132,5 +132,3 @@ for (i in 0:(n-1)) {
     print(paste("Skipping markers.", i, " - Not enough genes or NULL"))
   }
 }
-
-
