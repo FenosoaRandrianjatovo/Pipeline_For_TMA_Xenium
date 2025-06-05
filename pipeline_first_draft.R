@@ -244,6 +244,7 @@ for (ident in 0:(n-1)) {
   filename <- paste0("markers/markers.", ident, ".csv")
   
   # Save the markers data as a CSV file
+  print(paste("Saved:", filename))
   # write.csv(markers, file = filename, row.names = TRUE)
 }
 
@@ -334,6 +335,7 @@ for (i in 0:(n-1)) {
     print(paste("Skipping markers.", i, " - Not enough genes or NULL"))
   }
 }
+
 if (!dir.exists("VlnPlot_Feature_Count")) {
   dir.create("VlnPlot_Feature_Count")
 }
