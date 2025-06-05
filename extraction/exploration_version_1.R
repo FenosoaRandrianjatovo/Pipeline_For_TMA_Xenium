@@ -8,6 +8,10 @@ library(RColorBrewer)
 library(patchwork)
 
 
+cl <- parallelly::makeClusterPSOCK(25, outfile="")
+plan(cluster, workers = cl)
+
+
 
 
 
@@ -29,25 +33,4 @@ print(length(groups))
 n <- length(groups)
 
 
-counts_mat <- GetAssayData(xenium.obj, assay = "SCT", slot = "data")
-
-print("# 2. Sample 3000 cell barcodes (make reproducible with set.seed)")
-set.seed(123)
-selected_cells <- sample(colnames(counts_mat), 50000)
-
-print("# 3. Subset the matrix to those 3000 cells (genes stay the same)")
-counts_sub <- counts_mat[, selected_cells]
-
-print("# 4. Transpose & coerce to dense data.frame")
-counts_df <- as.data.frame(t(as.matrix(counts_sub)))
-
-
-
-print("# 5. Add the corresponding cluster labels")
-counts_df$cluster <- xenium.obj@meta.data[selected_cells, "seurat_clusters"]
-
-print("# 6. Write out to csv file")
-write.csv(counts_df,
-          file = "TMA_counts_with_clusters_SCT_data_FUllcells.csv",
-          row.names = TRUE)
 
