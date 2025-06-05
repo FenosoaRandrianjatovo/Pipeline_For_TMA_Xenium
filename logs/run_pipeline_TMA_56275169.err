@@ -1,0 +1,29 @@
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘arrow’
+
+The following object is masked from ‘package:utils’:
+
+    timestamp
+
+
+Attaching package: ‘glmGamPoi’
+
+The following object is masked from ‘package:ggplot2’:
+
+    vars
+
+Warning message:
+The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead. 
+Warning message:
+In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 11.1 GiB

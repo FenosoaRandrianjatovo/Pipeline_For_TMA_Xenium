@@ -1,0 +1,41 @@
+# ─── Python byte‐code ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ─── Virtual environments ────────────────────────────────────────
+gmamp_venv/
+env/
+venv/
+.venv/
+
+# ─── Python package distribution files ──────────────────────────
+# ─── Images ────────────────────────────────────────
+dataset/images/*
+dataset/tensor_results/*
+
+
+# ─── Distribution / packaging ────────────────────────────────────
+build/
+dist/
+*.egg-info/
+
+# ─── Data & models (huge files) ─────────────────────────────────
+
+data/
+
+
+# ─── Logs ───────────────────────────────────────────────────────
+*.log
+
+# ─── Jupyter notebooks checkpoints ──────────────────────────────
+.ipynb_checkpoints/
+
+# ─── IDE / editor files ─────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ─── Mac OS cruft ────────────────────────────────────────────────
+.DS_Store
