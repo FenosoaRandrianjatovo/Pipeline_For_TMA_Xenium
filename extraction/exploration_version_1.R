@@ -8,8 +8,8 @@ library(RColorBrewer)
 library(patchwork)
 
 
-cl <- parallelly::makeClusterPSOCK(25, outfile="")
-plan(cluster, workers = cl)
+# cl <- parallelly::makeClusterPSOCK(25, outfile="")
+# plan(cluster, workers = cl)
 
 
 
@@ -68,6 +68,7 @@ for (ident in 0:(n - 1)) {
 
 
 
+
 # Plot a marker gene’s expression: VlnPlot
 if (!dir.exists("VlnPLot")) {
   dir.create("VlnPLot")
@@ -97,8 +98,8 @@ for (i in 0:(n-1)) {
 }
 
 # Create the "Feature" folder if it does not exist
-if (!dir.exists("Feature")) {
-  dir.create("Feature")
+if (!dir.exists("Feature_")) {
+  dir.create("Feature_")
 }
 
 # Define marker indices (0 to 11)
@@ -121,7 +122,7 @@ for (i in 0:(n-1)) {
       image_feature_plot <- ImageFeaturePlot(xenium.obj, features = selected_gene)
       
       # Define the filename dynamically
-      filename <- paste0("Feature/FeaturePlot_ImageFeaturePlot_", selected_gene, "_ident", i, ".png")
+      filename <- paste0("Feature_/FeaturePlot_ImageFeaturePlot_","_ident.", i,"_" , selected_gene, ".png")
       
       # Save the ImageFeaturePlot
       ggsave(filename, plot = image_feature_plot + feature_plot, width = 50, height = 40, dpi = 300, limitsize = FALSE)
