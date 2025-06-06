@@ -39,3 +39,5 @@ data/
 
 # ─── Mac OS cruft ────────────────────────────────────────────────
 .DS_Store
+
+# git add . && git commit -m "Push today  June 5, 2025" && git push
