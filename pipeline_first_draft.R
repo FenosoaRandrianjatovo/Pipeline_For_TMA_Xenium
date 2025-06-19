@@ -215,18 +215,14 @@ for (feature in features) {
   }
 
 
-# To run FindMarkers we need presto
-# install.packages('devtools')
-# devtools::install_github('immunogenomics/presto')
-# Let's find all the Markers of the 12 clusters.
 
 
-# Create the "markers" folder if it does not exist
+# Create the "markers" folder
 if (!dir.exists("markers")) {
   dir.create("markers")
 }
 
-# Initialize an empty list to store marker genes
+
 markers_list <- list()
 
 # Loop through ident values from 0 to 11
@@ -248,16 +244,7 @@ for (ident in 0:(n-1)) {
   # write.csv(markers, file = filename, row.names = TRUE)
 }
 
-# We can zoom into a region of tissue, creating a new field of view. 
-# For example, we can zoom into a region that contains the hippocampus. 
-# Once zoomed-in, we can set DefaultBoundary() to show cell segmentations. 
-# You can also ‘simplify’ the cell segmentations, 
-# reducing the number of edges in each polygon to speed up plotting.
 
-
-
-# Now, markers.0 to markers.11 are available as variables
-# You can also access them using markers_list[["0"]], markers_list[["1"]], etc.
 
 
 
@@ -267,7 +254,7 @@ if (!dir.exists("Feature")) {
 }
 
 
-# c("ATP1A1", "ATP7B", "CD5", "CD6", "CD7", "CD8A")
+
 pa <- FeaturePlot(xenium.obj, features = rownames(markers.0)[1:6])
 pb <- ImageFeaturePlot(xenium.obj, features = rownames(markers.0)[1:6])
 ggsave("Feature/FeaturePlot_ImageFeaturePlot_6_markers.0.png", plot = pb, width = 50, height = 40, dpi = 300)
@@ -351,59 +338,3 @@ before <- VlnPlot(xenium.obj, features = c("nFeature_Xenium", "nCount_Xenium"), 
 ggsave("VlnPlot_Feature_Count/VlnPlot_nFeature_Xenium_nCount_Xenium_before_Clustering.png", plot = before, width = 20, height = 15, dpi = 300)
 
 
-
-
-
-# Problem with Cropping after doin the following command install.packages("sf", dependencies = TRUE)
-# DONE (spatstat)
-# ERROR: dependencies ‘sf’, ‘units’ are not available for package ‘stars’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/stars’
-# ERROR: dependencies ‘leaflet’, ‘raster’, ‘sf’ are not available for package ‘leafem’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/leafem’
-# ERROR: dependencies ‘leaflet’, ‘sf’ are not available for package ‘leafgl’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/leafgl’
-# ERROR: dependency ‘leaflet’ is not available for package ‘leaflegend’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/leaflegend’
-# ERROR: dependency ‘leaflet’ is not available for package ‘leafsync’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/leafsync’
-# ERROR: dependencies ‘sf’, ‘lwgeom’, ‘stars’, ‘units’ are not available for package ‘tmaptools’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/tmaptools’
-# ERROR: dependencies ‘leafem’, ‘leaflet’, ‘leafpop’, ‘raster’, ‘satellite’, ‘sf’ are not available for package ‘mapview’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/mapview’
-# ERROR: dependencies ‘leafem’, ‘leafgl’, ‘leaflegend’, ‘leaflet’, ‘leafsync’, ‘sf’, ‘stars’, ‘tmaptools’, ‘units’ are not available for package ‘tmap’
-# * removing ‘/home/fenosoa/R/x86_64-pc-linux-gnu-library/4.4/tmap’
-
-# The downloaded source packages are in
-# 	‘/tmp/RtmpDLzjBp/downloaded_packages’
-# There were 18 warnings (use warnings() to see them)
-
-
-# To run crop we need The package "sf" is required to overlay spatial information on the image.
-# create a Crop
-# cropped.coords <- Crop(xenium.obj[["fov"]], x = c(1750, 3000), y = c(3750, 5250), coords = "plot")
-# # set a new field of view (fov)
-# xenium.obj[["tumor"]] <- cropped.coords
-
-# List of genes you want to plot
-
-
-# If needed, set it to the correct assay, for example:
-# DefaultAssay(xenium.obj) <- "Xenium"  
-
-# genes_to_plot <- c("KHK", "CD4", "CYBA", "TMPRSS6")
-
-# # Get the feature names from the default assay
-# assay_features <- rownames(xenium.obj@assays[[DefaultAssay(xenium.obj)]])
-
-# # Check which genes are present
-# present_genes <- genes_to_plot[genes_to_plot %in% assay_features]
-# missing_genes <- genes_to_plot[!genes_to_plot %in% assay_features]
-
-# print(paste("Present genes:", paste(present_genes, collapse = ", ")))
-# print(paste("Missing genes:", paste(missing_genes, collapse = ", ")))
-
-# xenium.obj_up <- UpdateSeuratObject(xenium.obj)
-# plot2 <- Seurat::SpatialPlot(xenium.obj_up, features = "KHK", pt.size = 0.1)
-# ggsave("SpatialPlot.png", plot = plot2, width = 20, height = 15, dpi = 300)
-
-# View(Seurat::SpatialPlot)
