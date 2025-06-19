@@ -31,7 +31,7 @@ n <- length(groups)
 
 counts_mat <- GetAssayData(xenium.obj, assay = "SCT", slot = "data")
 
-print("# 2. Sample 3000 cell barcodes (make reproducible with set.seed)")
+print("Sample 3000 cell barcodes (make reproducible with set.seed)")
 set.seed(123)
 selected_cells <- sample(colnames(counts_mat), 50000)
 
