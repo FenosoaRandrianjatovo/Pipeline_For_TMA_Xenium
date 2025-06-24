@@ -20,12 +20,6 @@ load(path, envir = temp_env)
 xenium.obj <- temp_env$xenium.obj
 
 
-xenium.obj.list <- SplitObject(xenium.obj, split.by = "ident")
-
-
-subset()
-
-Assays(xenium.obj.list)
 
 centroids <- GetTissueCoordinates(xenium.obj[["fov"]], coords = "centroids")
 
@@ -48,7 +42,7 @@ summary(xenium.obj$y)
 centroids <- GetTissueCoordinates(xenium.obj[["fov"]], coords = "tissue")
 
 
-p <- plot(centroids$x, centroids$y,
+     <- plot(centroids$x, centroids$y,
      pch = 20, cex = 0.5,
      xlab = "x", ylab = "y",
      main = "All cell centroids")
@@ -68,19 +62,23 @@ cropped.coords <- Crop(
   coords = "tissue"
 )
 
-cropped.coords <- Crop(xenium.obj[["fov"]], x = c(1750, 3000), y = c(3750, 5250), coords = "plot")
-
-xenium.obj[["hippo"]] <- cropped.coords
+#cropped.coords <- Crop(xenium.obj[["fov"]], x = c(1750, 3000), y = c(3750, 5250), coords = "plot")
 
 
-p1 <- ImageDimPlot(xenium.obj, fov = "hippo", axes = TRUE, size = 0.7, border.color = "white", cols = "polychrome",
+cropped.coords <- Crop(xenium.obj[["fov"]], x = c(50, 2500), y = c(45, 4000), coords = "plot")
+#FOV1 [526-C]
+xenium.obj[["fov1"]] <- cropped.coords
+
+
+p1 <- ImageDimPlot(xenium.obj, fov = "fov1", axes = TRUE, size = 0.7, border.color = "white", cols = "polychrome",
                    coord.fixed = FALSE)
 
 
 
+p1
 
 hippo_centroids <- GetTissueCoordinates(
-  xenium.obj[["hippo"]],
+  xenium.obj[["fov1"]],
   coords = "tissue"
 )
 
@@ -98,7 +96,14 @@ hippo_seurat <- RunUMAP(  hippo_seurat, dims = 1:30  )
 hippo_seurat <- FindNeighbors(hippo_seurat, reduction = "pca", dims = 1:30)
 hippo_seurat <- FindClusters( hippo_seurat, resolution = 0.3 )
 
-DimPlot(hippo_seurat)
+q1 <- DimPlot(hippo_seurat)
+
+q2<- ImageDimPlot(hippo_seurat,alpha = 1, cols = "polychrome")
+
+p1 <- ImageFeaturePlot(hippo_seurat, features =c("FoxP3", "CD3E"),cols = "polychrome")
+p2 <- ImageDimPlot(hippo_seurat, features = c("FoxP3", "CD3E"), cols = "polychrome", nmols = 10000, alpha = 0.3, mols.cols = c("red", "blue"))
+
+ggsave("TEST_UMAP_for_FOV1.png", plot = q1, bg='white')
 
 
 
