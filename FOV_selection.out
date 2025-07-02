@@ -1,0 +1,1 @@
+cropped.coords <- Crop(xenium.obj[["fov"]], x = c(45, 2500), y = c(45, 4000), coords = "plot") ##FOV1 [526-C]
