@@ -1,1 +1,7 @@
 cropped.coords <- Crop(xenium.obj[["fov"]], x = c(45, 2500), y = c(45, 4000), coords = "plot") ##FOV1 [526-C]
+
+cropped.coords <- Crop(xenium.obj[["fov"]], x = c(5500, 9000), y = c(45, 3000), coords = "plot") #FOV2 [788-SH]
+
+cropped.coords <- Crop(xenium.obj[["fov"]], x = c( 9100, 15000), y = c(45, 3000), coords = "plot")#FOV3 [854-SH]
+
+cropped.coords <- Crop(xenium.obj[["fov"]], x = c( 15000, 18000), y = c(45, 3000), coords = "plot") #FOV4 [974-MT]
