@@ -338,3 +338,23 @@ before <- VlnPlot(xenium.obj, features = c("nFeature_Xenium", "nCount_Xenium"), 
 ggsave("VlnPlot_Feature_Count/VlnPlot_nFeature_Xenium_nCount_Xenium_before_Clustering.png", plot = before, width = 20, height = 15, dpi = 300)
 
 
+
+# Run FindAllMarkers once to get discriminating genes for every cluster
+all_markers <- FindAllMarkers(
+  xenium.obj,
+  only.pos        = TRUE,
+  min.pct         = 0.25,
+  logfc.threshold = 0.25
+)
+
+# Split by cluster and write out one CSV per cluster
+markers_by_cluster <- split(all_markers, all_markers$cluster)
+
+for (cluster in names(markers_by_cluster)) {
+  filename <- paste0("markers/markers.", cluster, ".csv")
+  write.csv(markers_by_cluster[[cluster]], file = filename, row.names = TRUE)
+  message("Saved: ", filename)
+}
+
+
+
