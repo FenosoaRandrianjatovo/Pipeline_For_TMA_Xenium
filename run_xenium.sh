@@ -1,10 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=run_TMA
 #SBATCH --account=def-amadou
-#SBATCH --mem=750G
-#SBATCH --time=0-20:00:00
-#SBATCH --cpus-per-task=40
-#SBATCH --mail-user=fenosoaammi@gmail.com
+#SBATCH --mem=150G
+#SBATCH --time=0-2:00:00
+#SBATCH --cpus-per-task=10
 #SBATCH --mail-type=ALL
 #SBATCH --output=/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/Pipeline_For_TMA_Xenium/logs/run_pipeline_TMA_%j.out
 #SBATCH --error=/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/Pipeline_For_TMA_Xenium/logs/run_pipeline_TMA_%j.err
