@@ -1,18 +1,17 @@
 library(Seurat)
 library(future)
 library(ggplot2)
-library(arrow)
 library(glmGamPoi)
 library(patchwork)
 library(RColorBrewer)
-library(patchwork)
+
 
 
 cl <- parallelly::makeClusterPSOCK(25, outfile="")
 plan(cluster, workers = cl)
-# options(future.globals.maxSize = 700 * 1024^3) 
 
-# remotes::install_version(package = 'Seurat', version = package_version('5.2.0'))
+
+
 
 setwd("/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/")
 
@@ -21,18 +20,8 @@ print(sessionInfo())
 print("==================================================================================")
 
 
-# path <- "/home/fenosoa/projects/def-salehlab-ab/TMA_Xenium/output-XETG00325__0051618__TMA__20250124__223259" 
 
 
-# print("# Load the Xenium data")
-# xenium.obj <- LoadXenium(path, fov = "fov")
-
-# print("# remove cells with 0 counts")
-# xenium.obj <- subset(xenium.obj, subset = nCount_Xenium > 0)
-# print("==================================================================================")
-# print("Save xenium.obj as a R Data file")
-# save(xenium.obj, file = "/home/fenosoa/projects/def-salehlab-ab/fenosoa/code_source_for_Pipeline/data_object/positive_count_xenium.obj.RData")
-# print("Save xenium.obj as a R Data file is done")
 
 print("==================================================================================")
 
@@ -43,7 +32,7 @@ temp_env <- new.env()
 print("xenium.obj :   Loading begin")
 load(path, envir = temp_env)
 
-xenium.obj <- temp_env$xenium.obj
+xenium.obj <- temp_env$xenium1.obj
 
 print("==================================================================================")
 
