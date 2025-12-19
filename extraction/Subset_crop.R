@@ -42,10 +42,10 @@ summary(xenium.obj$y)
 centroids <- GetTissueCoordinates(xenium.obj[["fov"]], coords = "tissue")
 
 
-     <- plot(centroids$x, centroids$y,
-     pch = 20, cex = 0.5,
-     xlab = "x", ylab = "y",
-     main = "All cell centroids")
+<- plot(centroids$x, centroids$y,
+pch = 20, cex = 0.5,
+xlab = "x", ylab = "y",
+main = "All cell centroids")
 
 
 
